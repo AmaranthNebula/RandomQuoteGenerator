@@ -15,30 +15,41 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="script.js"></script>
 	<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-	<link type="text/css" rel"stylesheet" href="stylesheet.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 
 </head>
 
 	<body>
 		<div>
 			<header>
-				<h1>Random Quote<br>Generator</h1>
-				<div class="navToggle"><i class = "fa fa-bars"></i>MENU</div>
+				<h1 id="logo">Random Quote<br>Generator</h1>
+				<div id="navToggle"><a href="#"><i class = "fa fa-bars"></i></a></div>
 			</header>
 			<nav>
+                <div id="closeButton"><i class="fa fa-times"></i></div>
 				<ul>
-					<li>Astronomy</li>
-					<li>Literature</li>
-					<li>Politics</li>
-					<li>Movies</li>
+					<li><a href="#Astronomy">Astronomy</a></li>
+					<li><a href="#Literature">Literature</a></li>
+					<li><a href="#Technology">Technology</a></li>
+					<li><a href="#Movies">Movies</a></li>
+                    <li class="selectedOption"><a href="#All">All</a></li>
 				</ul>
 			</nav>
-
-			<div>
-
-			</div>
-
+            <div class="quoteBox">
+                <div id="quote">
+                    <p class="quoteText"><i class="fa fa-quote-left"></i>
+                        This is a place holder quote
+                    <i class="fa fa-quote-right"></i></p>
+                    <p class="quoteCite"> - No One</p>
+                    <div>
+                        <a id="tweet" href="http://twitter.com/home/?status=quotegoeshere"><i class="fa fa-twitter"></i></a>
+                        <a class="button" href="#">New Quote</a>
+                    </div>
+                </div>
+             </div>
 			<footer>
+                <p>Copyright &copy; AmaranthNebula 2016</p>
 			</footer>
 		</div>
 	</body>
