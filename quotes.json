@@ -1,0 +1,90 @@
+{
+    "astronomy": [
+        {
+        "quote":"Telescopes are…like time machines. They reveal galaxies so far away that their light has taken billions of years to reach us", 
+        "author": "Giordano Bruno"
+        },
+        {
+        "quote":"We find...a wonderful symmetry in the universe, and a definite relation of harmony in the motion and magnitude of the orbs.", 
+        "author": "Johannes Kepler"
+        },
+        {
+        "quote":"If we do discover a complete theory [of the Universe] it would be the ultimate triumph of human reason.", 
+        "author": "Stephen Hawking"
+        },
+        {
+        "quote":"Astronomy is the science of the harmony of infinite expanse.", 
+        "author": "Lord John Russell"
+        },
+        {
+        "quote":"Space isn't remote at all. It's only an hour's drive away, if your car could go straight upwards.", 
+        "author": "Sir Fred Hoyle"
+        }
+    ],
+    "literature": [
+        {
+        "quote":"Life is to be lived, not controlled; and humanity is won by continuing to play in face of certain defeat." , 
+        "author": "Invisible Man"
+        },
+        {
+        "quote":"I know not all that may be coming, but be it what it will, I'll go to it laughing." , 
+        "author": "Moby Dick"
+        },
+        {
+        "quote":"It is a great misfortune to be alone, my friends; and it must be believed that solitude can quickly destroy reason." , 
+        "author": "The Mysterious Island"
+        },
+        {
+        "quote": "She says nothing at all, but simply stares upward into the dark sky and watches, with sad eyes, the slow dance of the infinite stars." , 
+        "author": "Stardust"
+        },
+        {
+        "quote":"It is sometimes an appropriate response to reality to go insane." , 
+        "author": "Valis"
+        }
+    ],
+        "technology": [
+        {
+        "quote":"Any sufficiently advanced technology is indistinguishable from magic", 
+        "author": "Arthur C. Clarke"
+        },
+        {
+        "quote":"There is no such thing at perfect security, only varying levels of insecurity", 
+        "author": "Salman Rushdie"
+        },
+        {
+        "quote":"We live in a society...dependent on science and technology, in which hardly anyone knows anything about science and technology.", 
+        "author": "Carl Sagan"
+        },
+        {
+        "quote":"I think there is a world market for maybe five computers.", 
+        "author": "Thomas Watson, 1943"
+        },
+        {
+        "quote":"Technology, like art, is a soaring exercise of the human imagination", 
+        "author": "Daniel Bell"
+        }
+    ],
+        "movies": [
+        {
+        "quote":"Frankly, my dear, I don't give a damn.", 
+        "author": "Gone With The Wind, 1939"
+        },
+        {
+        "quote":"Go ahead, make my day.", 
+        "author": "Sudden Impact, 1983"
+        },
+        {
+        "quote":"May the Force be with you.", 
+        "author": "Star Wars, 1977"
+        },
+        {
+        "quote":"Bond. James Bond.", 
+        "author": "Dr. No, 1962"
+        },
+        {
+        "quote":"Carpe diem. Seize the day, boys. Make your lives extraordinary.", 
+        "author": "Dead Poets Society, 1989"
+        }
+    ]    
+}

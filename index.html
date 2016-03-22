@@ -3,7 +3,7 @@
 	<head>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-       <!-- ADD THIS LATER<link rel="icon" type="image/png" href="images/favicon.png"/> -->
+       <link rel="icon" type="image/png" href="images/favicon.png"/>
 
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
@@ -21,7 +21,7 @@
 </head>
 
 	<body>
-		<div>
+		<div class="bg">
 			<header>
 				<h1 id="logo">Random Quote<br>Generator</h1>
 				<div id="navToggle"><a href="#"><i class = "fa fa-bars"></i></a></div>
@@ -29,19 +29,19 @@
 			<nav>
                 <div id="closeButton"><i class="fa fa-times"></i></div>
 				<ul>
-					<li><a href="#Astronomy">Astronomy</a></li>
-					<li><a href="#Literature">Literature</a></li>
-					<li><a href="#Technology">Technology</a></li>
-					<li><a href="#Movies">Movies</a></li>
-                    <li class="selectedOption"><a href="#All">All</a></li>
+					<li id="astronomy"><a href="#Astronomy">Astronomy</a></li>
+					<li id="literature"><a href="#Literature">Literature</a></li>
+					<li id="technology"><a href="#Technology">Technology</a></li>
+					<li id="movies"><a href="#Movies">Movies</a></li>
+                    <li id="all" class="selectedOption"><a href="#All">All</a></li>
 				</ul>
 			</nav>
             <div class="quoteBox">
                 <div id="quote">
-                    <p class="quoteText"><i class="fa fa-quote-left"></i>
-                        This is a place holder quote
+                    <p id="quoteText"><i class="fa fa-quote-left"></i>
+                        Text
                     <i class="fa fa-quote-right"></i></p>
-                    <p class="quoteCite"> - No One</p>
+                    <p id="quoteCite">&#8212 Some One</p>
                     <div>
                         <a id="tweet" href="http://twitter.com/home/?status=quotegoeshere"><i class="fa fa-twitter"></i></a>
                         <a class="button" href="#">New Quote</a>
