@@ -14,7 +14,7 @@ body > div {
     position: relative;
 }
 .bg {
-    background: url("/images/astronomyBG.jpg") no-repeat center center;
+    background: url("images/astronomyBG.jpg") no-repeat center center;
     background-size: cover;
 }
 
@@ -51,7 +51,7 @@ header {
     padding-bottom: 0.5em;
 }
 #closeButton i {
-    background-color: rgba(20,53,70, 0.5);
+    background-color: rgba(26,26,26, 0.5);
     padding: 0.5em;
 }
 nav {
@@ -72,7 +72,7 @@ nav > ul {
 }
 nav > ul > li {
     padding: 1em 0;
-    border-bottom: 1px solid #0E2546;
+    border-bottom: 1px solid rgba(26,26,26, 0.5);;
     
 }
 nav > ul > li > a {
