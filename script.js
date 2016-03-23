@@ -102,7 +102,7 @@ function updateColorTheme(category) {
   //update the background image and color theme to match current category
    function updateBG(current) {
        
-       $(".bg").css("background", 'url("/images/' + current + 'BG.jpg") no-repeat center center');
+       $(".bg").css("background", 'url("RandomQuoteGenerator/images/' + current + 'BG.jpg") no-repeat center center');
        $(".bg").css("background-size", "cover");
    }
 
