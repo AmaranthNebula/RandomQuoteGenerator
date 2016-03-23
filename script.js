@@ -103,7 +103,7 @@ function updateColorTheme(category) {
    function updateBG(current) {
        
         $(".bg").css("background", 'url("images/' + current + 'BG.jpg") no-repeat center center');
-       $(".bg").css("background-size", "cover");
+        $(".bg").css("background-size", "cover");
    }
 
    // button event handlers for categories
