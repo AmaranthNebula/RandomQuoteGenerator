@@ -3,13 +3,25 @@ $(document).ready(function() {
   var currentCategory = "all"; // this is the all categories option, and will be the default when page first loads
   var quoteText;
   var quoteAuthor;
-  var fileJSON = "quotes.json";
+
+function updateColorTheme(category) {
+    //first remove all  themes and add current theme 
+    $("header").removeClass("astronomyHeader literatureHeader technologyHeader moviesHeader").addClass(category + "Header");
+    $("nav").removeClass("astronomyTheme literatureTheme technologyTheme moviesTheme").addClass(category + "Theme");
+    $("footer").removeClass("astronomyTheme literatureTheme technologyTheme moviesTheme").addClass(category + "Theme");
+    $(".button").removeClass("astronomyTheme literatureTheme technologyTheme moviesTheme").addClass(category + "Theme");
+    //update hover settings for button
+    $(".button").removeClass("astronomyButton literatureButton technologyButton moviesButton").addClass(category + "Button");
+}
+
   
-  //this function loads a quote when the page loads
+   //this function loads a quote when the page loads
   function firstQuoteLoad () {
       randomCategory();
       randomQuote(currentCategory);
       updateBG(currentCategory);
+      updateColorTheme(currentCategory);
+      updateSelectedButton("all");
   }
   firstQuoteLoad();
   // generates a random number and finds the applicable category
@@ -34,10 +46,9 @@ $(document).ready(function() {
       } // switch end
    }
    function randomQuote(category) {
-       
-       
+             
        //uses the currentCategory var and creates a random num to find specific quote
-       $.getJSON(fileJSON, function(json) {
+       $.getJSON("quotes.json", function(json) {
           var catLength = JSON.stringify(json[category].length);
           var index = (Math.floor(Math.random() * ((catLength-1) - 0 + 1)) + 0);
       
@@ -58,12 +69,15 @@ $(document).ready(function() {
        
    }
    //get new quote button
-   $(".button").click(function() {
+   $(".button").click(function(e) {
+       e.preventDefault();
         //check if the 'all' cat is selected
         if ($("#all").hasClass("selectedOption")) {
             randomCategory();
             randomQuote(currentCategory);
             updateBG(currentCategory);
+            updateColorTheme(currentCategory);
+            updateSelectedButton("all");
         } 
         // get quote from current category
         else {
@@ -75,15 +89,17 @@ $(document).ready(function() {
    
    // this button removes the selection class from the buttons and updates the selected one
    function updateSelectedButton(currentButton) {
-       $("#astronomy").removeClass("selectedOption");
-       $("#literature").removeClass("selectedOption");
-       $("#technology").removeClass("selectedOption");
-       $("#movies").removeClass("selectedOption");
-       $("#all").removeClass("selectedOption");
-       
+       $("#astronomy").removeClass("selectedOption astronomySelected");
+       $("#literature").removeClass("selectedOption literatureSelected");
+       $("#technology").removeClass("selectedOption technologySelected");
+       $("#movies").removeClass("selectedOption moviesSelected");
+       $("#all").removeClass("selectedOption astronomySelected literatureSelected technologySelected moviesSelected");
+        
        $("#" + currentButton).addClass("selectedOption");
+       $("#" + currentButton).addClass(currentCategory + "Selected");
    }
-   //update the background image and color theme to match current category
+
+  //update the background image and color theme to match current category
    function updateBG(current) {
        
        $(".bg").css("background", 'url("/images/' + current + 'BG.jpg") no-repeat center center');
@@ -101,6 +117,7 @@ $(document).ready(function() {
        e.preventDefault();
        currentCategory = "astronomy";
        updateSelectedButton("astronomy");
+       updateColorTheme("astronomy");
        updateBG("astronomy");
        randomQuote(currentCategory);
        updateQuoteDiv();
@@ -109,7 +126,8 @@ $(document).ready(function() {
    $("#literature").click(function(e) {
        e.preventDefault();
        currentCategory = "literature";
-       updateSelectedButton(currentCategory);
+       updateSelectedButton("literature");
+       updateColorTheme("literature");
        updateBG("literature");
        randomQuote(currentCategory);
        updateQuoteDiv();
@@ -117,7 +135,8 @@ $(document).ready(function() {
    $("#technology").click(function(e) {
        e.preventDefault();
        currentCategory = "technology";
-       updateSelectedButton(currentCategory);
+       updateSelectedButton("technology");
+       updateColorTheme("technology");       
        updateBG("technology");
        randomQuote(currentCategory);
        updateQuoteDiv();      
@@ -125,19 +144,21 @@ $(document).ready(function() {
    $("#movies").click(function(e) {
        e.preventDefault();
        currentCategory = "movies"; 
-       updateSelectedButton(currentCategory);
+       updateSelectedButton("movies");
+       updateColorTheme("movies");       
        updateBG("movies");
        randomQuote(currentCategory);
        updateQuoteDiv();
    });
    $("#all").click(function(e) {
        e.preventDefault();
-       updateSelectedButton("all");       
+     
        randomCategory(); //get random category
-       var imagePath = 'url("/images/' + currentCategory + 'BG.jpg") no-repeat center center'
+       updateColorTheme(currentCategory);       
        updateBG(currentCategory); 
        randomQuote(currentCategory);  
        updateQuoteDiv();  
+        updateSelectedButton("all");  
    });
    
    
@@ -159,7 +180,7 @@ $(document).ready(function() {
     
     
     // check if on mobile; on mobile devices don't count the hidden nav bar
-     if ($(document).width() >= 700) {
+     if ($("#navToggle").css("display") == "none") {
          headerHeight += $("nav").outerHeight();
      }
      // calculate the needed height
@@ -198,14 +219,14 @@ $(document).ready(function() {
     //when window is resized re-center quote and show or hide navbar
     $(window).resize(function() {
        centerQuote();
-       
-       if ($(document).width() < 700) {
-            $("nav").css("display","none");
-           $("#closeButton").css("display","none");
+       // if the navToggle is visible; then a mobile device is being used
+    if ($("#navToggle").css("display") != "none") {
+        $("nav").css("display","none");
+        $("#closeButton").css("display","none");
        }  
-       else {
-            $("nav").css("display","block");
-           $("#closeButton").css("display","none"); 
+    else {
+        $("nav").css("display","block");
+        $("#closeButton").css("display","none"); 
        }
     });    
     
