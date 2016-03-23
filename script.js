@@ -122,6 +122,7 @@ function updateColorTheme(category) {
        randomQuote(currentCategory);
        updateQuoteDiv();
        
+       closeMenu();
    });
    $("#literature").click(function(e) {
        e.preventDefault();
@@ -131,6 +132,8 @@ function updateColorTheme(category) {
        updateBG("literature");
        randomQuote(currentCategory);
        updateQuoteDiv();
+       
+       closeMenu();
    });
    $("#technology").click(function(e) {
        e.preventDefault();
@@ -140,6 +143,8 @@ function updateColorTheme(category) {
        updateBG("technology");
        randomQuote(currentCategory);
        updateQuoteDiv();      
+       
+       closeMenu();
    });
    $("#movies").click(function(e) {
        e.preventDefault();
@@ -149,6 +154,8 @@ function updateColorTheme(category) {
        updateBG("movies");
        randomQuote(currentCategory);
        updateQuoteDiv();
+       
+       closeMenu();
    });
    $("#all").click(function(e) {
        e.preventDefault();
@@ -159,10 +166,19 @@ function updateColorTheme(category) {
        randomQuote(currentCategory);  
        updateQuoteDiv();  
         updateSelectedButton("all");  
+        
+        closeMenu();
    });
    
    
-
+   // check if on mobile: if so close nav menu
+   //this is called after one of the nav links are tapped
+   function closeMenu() {
+    if ($("#navToggle").css("display") != "none") {
+        $("nav").css("display","none");
+        $("#closeButton").css("display","none");
+       }  
+   }
    
    
    
