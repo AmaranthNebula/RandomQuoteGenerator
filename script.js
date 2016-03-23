@@ -122,7 +122,8 @@ function updateColorTheme(category) {
        randomQuote(currentCategory);
        updateQuoteDiv();
        
-       closeMenu();
+       closeMenu();       
+
    });
    $("#literature").click(function(e) {
        e.preventDefault();
@@ -180,6 +181,14 @@ function updateColorTheme(category) {
        }  
    }
    
+   // check if on mobile: if so close nav menu
+   //this is called after one of the nav links are tapped
+   function closeMenu() {
+    if ($("#navToggle").css("display") != "none") {
+        $("nav").css("display","none");
+        $("#closeButton").css("display","none");
+       }  
+   }
    
    
    //center quote on screen
