@@ -186,7 +186,7 @@ function updateColorTheme(category) {
    function centerQuote () {
        // reset size to auto to allow landscape mobiles to resize correctly
        $(".quoteBox").css("height", "auto");
-     var parentHeight =  $(".quoteBox").parent().outerHeight();
+     var parentHeight =  $("html").outerHeight();
      var footerHeight = $("footer").outerHeight();
      var headerHeight = $("header").outerHeight();
    
