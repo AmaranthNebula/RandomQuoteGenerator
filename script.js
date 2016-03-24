@@ -69,8 +69,7 @@ function updateColorTheme(category) {
        
    }
    //get new quote button
-   $(".button").click(function(e) {
-       e.preventDefault();
+   $("button").click(function(e) {
         //check if the 'all' cat is selected
         if ($("#all").hasClass("selectedOption")) {
             randomCategory();

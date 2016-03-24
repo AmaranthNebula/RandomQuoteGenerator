@@ -119,11 +119,10 @@ nav > ul > li > a {
     color: white;
     font-weight: bold;
     margin: auto;
+    border: none;
+    outline: none;
 }
-/*.button:hover {
-    color: #3082AC;
-    background-color: #0E2546;
-}*/
+
 body > div > div {
     display: flex;
     justify-content: space-between;
